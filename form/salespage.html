@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Male Restoration Education</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Estilos generales */
+      body {
+        background: linear-gradient(120deg, #232526, #414345);
+        color: #fff;
+        font-family: "Segoe UI", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Estilos del popup */
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .popup-content {
+        background: #1e1e28;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        padding: 48px 24px 24px;
+        text-align: center;
+        max-width: 500px;
+        width: 90%;
+      }
+
+      .popup-content h1 {
+        font-size: 2em;
+        margin-bottom: 16px;
+      }
+
+      .popup-content p {
+        font-size: 1.1em;
+        line-height: 1.5;
+        margin-bottom: 24px;
+      }
+
+      .popup-btn {
+        background: #ff512f;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 28px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .popup-btn:hover {
+        background: #dd2476;
+      }
+
+      /* Estilos de la página principal */
+      .main-content {
+        text-align: center;
+        margin: 80px 20px;
+        display: none; /* Oculto hasta que se acepte el popup */
+      }
+
+      .main-content h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      .main-content p {
+        font-size: 1.2em;
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Popup de advertencia -->
+    <div class="popup-overlay" id="warningPopup">
+      <div class="popup-content">
+        <h1>⚠️ Explicit Educational Content: 18+ Only</h1>
+        <p>
+          This page contains detailed content about male restoration.<br />
+          Viewer discretion is advised.<br />
+          You must be 18 years or older to proceed.
+        </p>
+        <button class="popup-btn" onclick="acceptWarning()">
+          I Understand. Enter.
+        </button>
+      </div>
+    </div>
+
+    <!-- Contenido principal de la página -->
+
+    <script>
+      function acceptWarning() {
+        // Ocultar el popup
+        document.getElementById("warningPopup").style.display = "none";
+        // Mostrar el contenido principal
+        document.getElementById("mainContent").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
