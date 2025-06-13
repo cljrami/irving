@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Whole Man - Reclaim Your Wholeness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-bg-dark: #0a0a0a;
+        --color-bg-medium: #1a1a1a;
+        --color-text: #e0e0e0;
+        --color-text-muted: #888;
+        --color-primary-pink: #e6007e;
+        --color-accent-gold: #d4af37;
+        --color-accent-fire: #ff4500;
+        --color-border: rgba(255, 255, 255, 0.1);
+        --font-main: "Poppins", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font-main);
+        background-color: var(--color-bg-dark);
+        color: var(--color-text);
+        line-height: 1.8;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      .container {
+        width: 90%;
+        max-width: 960px;
+        margin: auto;
+        padding: 120px 20px;
+        text-align: center;
+      }
+      .page-section {
+        position: relative;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .section-heading {
+        font-family: var(--font-main);
+        font-weight: 900;
+        font-size: 4rem;
+        letter-spacing: 1px;
+        color: white;
+        margin-bottom: 20px;
+        text-shadow: 0 0 15px rgba(230, 0, 126, 0.2);
+        line-height: 1.2;
+      }
+      .section-subheading {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        color: var(--color-text-muted);
+        line-height: 1.7;
+        font-weight: 400;
+      }
+      .cta-button {
+        display: inline-block;
+        padding: 18px 45px;
+        background-color: var(--color-primary-pink);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 1.2em;
+        font-family: var(--font-main);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        box-shadow: 0 5px 20px rgba(230, 0, 126, 0.25);
+        cursor: pointer;
+      }
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(230, 0, 126, 0.4);
+      }
+      .hero-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(
+            rgba(10, 10, 10, 0.85),
+            rgba(10, 10, 10, 0.95)
+          ),
+          url(https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .hero-section .section-heading {
+        font-size: 5rem;
+      }
+      .impact-section {
+        background-color: var(--color-bg-medium);
+      }
+      .impact-section .highlight {
+        color: var(--color-accent-gold);
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+      .video-section .video-container {
+        position: relative;
+        max-width: 900px;
+        margin: auto;
+        aspect-ratio: 16/9;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #000;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        border: 1px solid var(--color-border);
+      }
+      .video-section .video-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .testimonial-card {
+        margin: 40px auto;
+        max-width: 700px;
+      }
+      .testimonial-card p {
+        font-family: var(--font-main);
+        font-style: italic;
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: var(--color-text);
+      }
+      .testimonial-card footer {
+        font-family: var(--font-main);
+        font-weight: 700;
+        color: var(--color-accent-gold);
+      }
+      .cta-subtext {
+        margin-top: 15px;
+        font-size: 1rem;
+        color: var(--color-text-muted);
+      }
+      .entry-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 10001;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        backdrop-filter: blur(8px);
+      }
+      .modal-content {
+        background: var(--color-bg-medium);
+        padding: 50px;
+        border-radius: 10px;
+        border: 1px solid var(--color-border);
+        max-width: 500px;
+        width: 90%;
+        animation: fadeIn 0.5s ease-out;
+      }
+      .modal-content h2 {
+        font-family: var(--font-main);
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
+      .modal-content p {
+        color: var(--color-text-muted);
+        margin: 20px 0;
+      }
+      .modal-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+      }
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        z-index: 9999;
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+      .quiz-container {
+        position: relative;
+        max-width: 550px;
+        width: 90%;
+        margin: 16px;
+        background: rgba(30, 30, 40, 0.98);
+        border-radius: 25px;
+        box-shadow: 0 10px 40px rgba(230, 0, 126, 0.4);
+        padding: 30px;
+        animation: fadeIn 1s forwards;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .quiz-header h2 {
+        margin: 0;
+        font-size: 1.6em;
+        color: #fff;
+        font-family: var(--font-main);
+        font-weight: 700;
+      }
+      .question-section p {
+        font-size: 1.15em;
+        line-height: 1.6em;
+        color: #e0e0e0;
+        margin: 20px 0;
+      }
+      .answers {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .answer-btn {
+        background: #232526;
+        color: #fff;
+        border: 2px solid var(--color-text-muted);
+        border-radius: 10px;
+        padding: 16px 15px;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: left;
+      }
+      .answer-btn.selected,
+      .answer-btn:hover {
+        background: var(--color-primary-pink);
+        border-color: var(--color-primary-pink);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(230, 0, 126, 0.4);
+      }
+      .nav-btns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+      }
+      .nav-btn {
+        background: #444;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        padding: 15px 35px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .nav-btn:hover:not(:disabled) {
+        background: #555;
+      }
+      .nav-btn:disabled {
+        background: #222;
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+      #nextBtn:not(:disabled) {
+        background: var(--color-accent-fire);
+        box-shadow: 0 5px 20px rgba(255, 69, 0, 0.3);
+      }
+      #nextBtn:hover:not(:disabled) {
+        box-shadow: 0 8px 30px rgba(255, 69, 0, 0.5);
+      }
+      .result {
+        margin: 35px 0;
+        padding: 25px;
+        border-radius: 15px;
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid var(--color-accent-gold);
+      }
+      .result .result-category-title {
+        color: var(--color-accent-gold);
+        margin-bottom: 10px;
+        font-size: 1.8em;
+        font-weight: 700;
+      }
+      .result .result-visual-title {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+      .result .result-message {
+        font-size: 1.1em;
+        line-height: 1.6em;
+        color: #e0e0e0;
+      }
+      .input-field {
+        background: #232526;
+        color: #fff;
+        border: 2px solid var(--color-text-muted);
+        border-radius: 10px;
+        padding: 15px;
+        font-size: 1.1em;
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        .section-heading {
+          font-size: 2.8rem;
+        }
+        .hero-section .section-heading {
+          font-size: 3rem;
+        }
+        .quiz-header h2 {
+          font-size: 1.4em;
+        }
+        .about-section {
+          text-align: center;
+        }
+        .about-text {
+          text-align: center;
+        }
+        .about-text .section-heading {
+          text-align: center;
+        }
+        .about-text .quote {
+          margin: 20px auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="entryModal" class="entry-modal">
+      <div class="modal-content">
+        <h2>🔞 This site is intended for adult men (18+).</h2>
+        <p>
+          You are about to enter a space that addresses themes of physical
+          trauma, masculine restoration, and sexual embodiment. It is not
+          entertainment. It is initiation.
+        </p>
+        <div class="modal-buttons">
+          <button class="cta-button" id="enterSiteBtn">
+            I Am 18 or Older → Enter Site
+          </button>
+          <button
+            class="cta-button"
+            id="exitSiteBtn"
+            style="
+              background: var(--color-bg-medium);
+              border: 1px solid var(--color-text-muted);
+            "
+          >
+            Exit Site
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="siteContent" style="visibility: hidden">
+      <header class="page-section hero-section">
+        <div class="container">
+          <h1 class="section-heading">
+            They Took It. And No One Ever Told You.
+          </h1>
+          <p class="section-subheading">
+            This quiz explores how circumcision—a decision made before you could
+            speak—has shaped your body, your mind, and your masculine identity.
+            It’s time to question what you were told. It’s time to reclaim what
+            was taken.
+          </p>
+          <a
+            href="javascript:void(0)"
+            class="cta-button"
+            onclick="openQuizPopup()"
+            >Take the Whole Man Quiz →</a
+          >
+        </div>
+      </header>
+
+      <main>
+        <section class="page-section video-section">
+          <div class="container">
+            <h2 class="section-heading">“The Truth They Never Told You”</h2>
+            <div class="video-container">
+              <iframe
+                src="https://www.youtube.com/embed/e_84g0sS_c4"
+                title="Video about masculine restoration"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p
+              class="section-subheading"
+              style="margin-top: 20px; font-size: 0.9rem"
+            >
+              ⚠️ For adult men (18+). Contains metaphorical references to trauma
+              and restoration.
+            </p>
+          </div>
+        </section>
+
+        <section class="page-section impact-section">
+          <div class="container">
+            <h2 class="section-heading">🧬 What the Test Reveals</h2>
+            <p class="section-subheading">
+              Discover your masculine archetype—and how circumcision may have
+              silently influenced your emotions, drive, and relationships. This
+              is not just information. It’s revelation. It’s the first step in
+              reclaiming your power.
+            </p>
+          </div>
+        </section>
+
+        <section class="page-section testimonial-section">
+          <div class="container">
+            <h2 class="section-heading">🧔‍♂️ Real Men Are Waking Up</h2>
+            <div class="testimonial-card">
+              <p>
+                “I always felt something was off. When I discovered what had
+                been taken from me, everything made sense. I took the test. I
+                cried. Then I began.”
+              </p>
+              <footer>— Mateo, 33</footer>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="container">
+            <a
+              href="javascript:void(0)"
+              class="cta-button"
+              onclick="openQuizPopup()"
+              >Take the Whole Man Quiz →</a
+            >
+            <p class="cta-subtext">Start your journey back to wholeness.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="popup-overlay" id="quizOverlay">
+      <div class="quiz-container" id="popupQuizContainer"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .getElementById("enterSiteBtn")
+          .addEventListener("click", () => {
+            document.getElementById("entryModal").style.display = "none";
+            document.getElementById("siteContent").style.visibility = "visible";
+          });
+        document.getElementById("exitSiteBtn").addEventListener("click", () => {
+          window.location.href = "https://www.google.cl";
+        });
+      });
+
+      const quizData = [
+        { type: "intro" },
+        { type: "details" },
+        {
+          section: "🧠 The Awakening",
+          question:
+            "If you found out that circumcision was largely promoted for profit—not your health—how would you feel?",
+          options: [
+            { text: "Betrayed and angry", value: 3 },
+            { text: "Like something sacred was taken", value: 2 },
+            { text: "Shocked, but ready to learn more", value: 1 },
+            { text: "I’m not sure…", value: 0 },
+          ],
+        },
+        {
+          section: "🧠 The Awakening",
+          question:
+            "Did you know that infant foreskin is sold for use in skincare and cosmetic products?",
+          options: [
+            { text: "That’s horrifying", value: 3 },
+            { text: "I had no idea", value: 2 },
+            { text: "Wait… they sell foreskin?", value: 1 },
+            { text: "I don’t know how to feel about this", value: 0 },
+          ],
+        },
+        {
+          section: "🧠 The Awakening",
+          question:
+            "In most of the world, routine circumcision is not performed. Knowing this, how do you feel about it being standard in your country?",
+          options: [
+            { text: "It confirms what I’ve always felt", value: 3 },
+            { text: "I feel like I’ve been misled", value: 2 },
+            { text: "It makes me wonder why it was done to me", value: 1 },
+            {
+              text: "I didn’t know that… now I’m questioning everything",
+              value: 0,
+            },
+          ],
+        },
+        {
+          section: "🧠 The Awakening",
+          question: "What were you told about circumcision growing up?",
+          options: [
+            { text: "I’m realizing how deep the conditioning goes", value: 3 },
+            { text: "Now I see those were just justifications", value: 2 },
+            { text: "It was never explained—just assumed", value: 1 },
+            {
+              text: "It was cleaner or healthier, and I believed it",
+              value: 0,
+            },
+          ],
+        },
+        {
+          section: "🧠 The Awakening",
+          question:
+            "Many supposed health benefits of circumcision can be achieved through basic hygiene. How does this make you feel?",
+          options: [
+            { text: "I feel manipulated", value: 3 },
+            { text: "I need to unlearn a lot right now", value: 2 },
+            { text: "Then why weren’t we told this?", value: 1 },
+            { text: "That makes a lot of sense", value: 0 },
+          ],
+        },
+        {
+          section: "🧠 The Awakening",
+          question:
+            "What would it mean for you to question the story you were told and reclaim the parts taken without consent?",
+          options: [
+            { text: "I want the truth, no matter what", value: 3 },
+            { text: "I’m ready to take that first step", value: 2 },
+            { text: "It would be a path toward healing", value: 1 },
+            { text: "It feels painful, but necessary", value: 0 },
+          ],
+        },
+        {
+          section: "🧠 The Awakening",
+          question:
+            "How does it feel to know that the most sensitive part of your body was permanently altered before you could speak?",
+          options: [
+            { text: "I feel deeply violated", value: 3 },
+            { text: "It hurts to acknowledge", value: 2 },
+            { text: "It’s uncomfortable to think about", value: 1 },
+            { text: "I’ve never thought about it", value: 0 },
+          ],
+        },
+        {
+          section: "🧠 The Awakening",
+          question:
+            "An estimated 1 in 500 circumcisions results in a botched procedure. How does this risk for a non-essential surgery make you feel?",
+          options: [
+            { text: "Furious that this risk is taken", value: 3 },
+            { text: "Heartbroken for the babies affected", value: 2 },
+            { text: "Terrified this could have happened to me", value: 1 },
+            { text: "Numb… I didn’t realize it was that serious", value: 0 },
+          ],
+        },
+        {
+          section: "🧠 The Awakening",
+          question:
+            "Imagine watching a video of an infant being circumcised. How do you feel?",
+          options: [
+            { text: "Furious that this still happens", value: 3 },
+            { text: "Deeply disturbed", value: 2 },
+            { text: "Confused and conflicted", value: 1 },
+            { text: "Unaffected", value: 0 },
+          ],
+        },
+        {
+          section: "🧠 The Awakening",
+          question:
+            "Do you believe men deserve the right to choose circumcision for themselves?",
+          options: [
+            { text: "100% yes", value: 3 },
+            { text: "Most of the time", value: 2 },
+            { text: "I'm not sure", value: 1 },
+            { text: "No, it should be decided at birth", value: 0 },
+          ],
+        },
+        {
+          section: "🧠 The Awakening",
+          question:
+            "Did you know it’s possible to reverse much of the damage caused by circumcision?",
+          options: [
+            { text: "Yes, and I’ve already started", value: 3 },
+            { text: "Yes, and I’ve been thinking about it", value: 2 },
+            { text: "I’ve heard a little, but never looked into it", value: 1 },
+            { text: "No, and now I want to learn more", value: 0 },
+          ],
+        },
+        {
+          section: "🍆 The Physical Truth",
+          question:
+            "Have you ever felt something was “off” in your sexual experience, but couldn’t explain why?",
+          options: [
+            { text: "All the time", value: 3 },
+            { text: "Yes, frequently", value: 2 },
+            { text: "Occasionally", value: 1 },
+            { text: "No", value: 0 },
+          ],
+        },
+        {
+          section: "🍆 The Physical Truth",
+          question:
+            "Do you need lube to masturbate or feel discomfort due to friction?",
+          options: [
+            { text: "Yes, always", value: 3 },
+            { text: "Usually, but I never questioned it", value: 2 },
+            { text: "Occasionally", value: 1 },
+            { text: "No, never", value: 0 },
+          ],
+        },
+        {
+          section: "🍆 The Physical Truth",
+          question:
+            "Does the head (glans) of your penis feel dull, dry, or less sensitive than you think it should be?",
+          options: [
+            { text: "Always", value: 3 },
+            { text: "Often", value: 2 },
+            { text: "Slightly", value: 1 },
+            { text: "Not at all", value: 0 },
+          ],
+        },
+        {
+          section: "🍆 The Physical Truth",
+          question:
+            "When was the last time you questioned whether your penis feels the way it should?",
+          options: [
+            { text: "I know it doesn’t—and I want it back", value: 3 },
+            { text: "I’ve definitely wondered about that", value: 2 },
+            { text: "I’ve had doubts but pushed them away", value: 1 },
+            { text: "I never have, until now", value: 0 },
+          ],
+        },
+        {
+          section: "🍆 The Physical Truth",
+          question:
+            "Have you ever wished masturbation or sex felt more natural, smooth, or connected?",
+          options: [
+            { text: "Constantly", value: 3 },
+            { text: "Often", value: 2 },
+            { text: "Occasionally", value: 1 },
+            { text: "No, I’m fully satisfied", value: 0 },
+          ],
+        },
+        {
+          section: "🍆 The Physical Truth",
+          question:
+            "Have you ever compared your glans to images of an intact man’s penis and thought, “Why doesn’t mine look like that?”",
+          options: [
+            { text: "Yes, many times", value: 3 },
+            { text: "Once or twice", value: 2 },
+            { text: "I’ve never really looked", value: 1 },
+            { text: "I didn’t even know there was a difference", value: 0 },
+          ],
+        },
+        {
+          section: "🍆 The Physical Truth",
+          question:
+            "When you’re naked in public spaces (sauna, gym), do you feel exposed or self-conscious about your penis?",
+          options: [
+            { text: "I avoid those situations entirely", value: 3 },
+            { text: "Often self-conscious", value: 2 },
+            { text: "A little uncomfortable", value: 1 },
+            { text: "Not at all", value: 0 },
+          ],
+        },
+        {
+          section: "🍆 The Physical Truth",
+          question:
+            "Did you know the foreskin protects the glans and enhances sensation?",
+          options: [
+            { text: "Yes, and I want to restore what was taken", value: 3 },
+            { text: "Yes, and I’ve thought about what I lost", value: 2 },
+            { text: "I heard something about that", value: 1 },
+            { text: "No, I had no idea", value: 0 },
+          ],
+        },
+        {
+          section: "🍆 The Physical Truth",
+          question:
+            "Did you know the foreskin contains over 20,000 nerve endings?",
+          options: [
+            { text: "Yes, and it makes me want to reclaim it", value: 3 },
+            { text: "That explains a lot", value: 2 },
+            { text: "That’s surprising", value: 1 },
+            { text: "No, I never heard that", value: 0 },
+          ],
+        },
+        {
+          section: "💔 The Emotional Wound",
+          question:
+            "Have you considered the emotional impact of experiencing pain and mutilation as one of your first moments of life?",
+          options: [
+            {
+              text: "Yes—and I believe it shaped my earliest sense of trust and safety",
+              value: 3,
+            },
+            { text: "It feels like a deep, unacknowledged trauma", value: 2 },
+            {
+              text: "It’s uncomfortable, but I’m beginning to see it differently",
+              value: 1,
+            },
+            { text: "I’ve never thought about it that way", value: 0 },
+          ],
+        },
+        {
+          section: "💔 The Emotional Wound",
+          question:
+            "What emotion do you feel imagining your infant self being restrained and cut?",
+          options: [
+            { text: "Rage and betrayal", value: 3 },
+            { text: "Grief and sadness", value: 2 },
+            { text: "Confusion or detachment", value: 1 },
+            { text: "Nothing", value: 0 },
+          ],
+        },
+        {
+          section: "💔 The Emotional Wound",
+          question:
+            "How do you feel about your parents being the ones who allowed this to happen to your newborn self?",
+          options: [
+            {
+              text: "I’ve processed the pain and I’m ready to break this generational pattern",
+              value: 3,
+            },
+            {
+              text: "I feel grief or anger, even if I still love them",
+              value: 2,
+            },
+            {
+              text: "I’ve started to feel conflicted about their decision",
+              value: 1,
+            },
+            { text: "I believe they did what they thought was best", value: 0 },
+          ],
+        },
+        {
+          section: "💔 The Emotional Wound",
+          question:
+            "If your parents had been fully informed, do you believe they would’ve made the same decision?",
+          options: [
+            { text: "Absolutely not", value: 3 },
+            { text: "No, I don’t think so", value: 2 },
+            { text: "Probably, but with hesitation", value: 1 },
+            { text: "Yes, without a doubt", value: 0 },
+          ],
+        },
+        {
+          section: "💔 The Emotional Wound",
+          question:
+            "Have you avoided vulnerability or deep intimacy due to shame or fear of being fully seen?",
+          options: [
+            { text: "Always", value: 3 },
+            { text: "Often", value: 2 },
+            { text: "Occasionally", value: 1 },
+            { text: "Never", value: 0 },
+          ],
+        },
+        {
+          section: "💔 The Emotional Wound",
+          question:
+            "Could there be a connection between circumcision and the emotional or psychological struggles many men face today?",
+          options: [
+            {
+              text: "Yes—I believe it plays a hidden but powerful role",
+              value: 3,
+            },
+            { text: "It’s starting to make sense", value: 2 },
+            { text: "Maybe, but I need to understand more", value: 1 },
+            { text: "I don’t think so", value: 0 },
+          ],
+        },
+        {
+          section: "💔 The Emotional Wound",
+          question:
+            "If baby girls were being mutilated at birth—for profit and under the lie of “health”—don’t you think women would’ve burned the system down? Why haven’t men?",
+          options: [
+            { text: "I’m done being silent—it’s time we fight back", value: 3 },
+            { text: "You’re right—it’s insane we’ve stayed silent", value: 2 },
+            {
+              text: "That hits hard… and makes me question everything",
+              value: 1,
+            },
+            { text: "I never thought of it like that", value: 0 },
+          ],
+        },
+        {
+          section: "🔥 Sexual Confidence & Masculine Energy",
+          question:
+            "Have you ever considered how your sexuality might have developed if your body had been left whole from birth?",
+          options: [
+            {
+              text: "Yes—and I feel I’ve been robbed of something essential",
+              value: 3,
+            },
+            {
+              text: "I believe it would have made a meaningful difference",
+              value: 2,
+            },
+            {
+              text: "I’m starting to wonder how it could’ve shaped my experience",
+              value: 1,
+            },
+            { text: "I’ve never thought about it", value: 0 },
+          ],
+        },
+        {
+          section: "🔥 Sexual Confidence & Masculine Energy",
+          question: "How would you describe your current sexual experience?",
+          options: [
+            { text: "I avoid intimacy altogether", value: 3 },
+            { text: "Unfulfilling and mechanical", value: 2 },
+            { text: "Functional but not deeply connected", value: 1 },
+            { text: "Deeply satisfying", value: 0 },
+          ],
+        },
+        {
+          section: "🔥 Sexual Confidence & Masculine Energy",
+          question: "Do you feel confident in your body when naked?",
+          options: [
+            { text: "Not at all", value: 3 },
+            { text: "Rarely", value: 2 },
+            { text: "Somewhat", value: 1 },
+            { text: "Absolutely", value: 0 },
+          ],
+        },
+        {
+          section: "🔥 Sexual Confidence & Masculine Energy",
+          question:
+            "Would you want to experience what true, natural pleasure was meant to feel like?",
+          options: [
+            { text: "Absolutely", value: 3 },
+            { text: "I’ve never thought about it, but yes", value: 2 },
+            { text: "Maybe", value: 1 },
+            { text: "I’m skeptical", value: 0 },
+          ],
+        },
+        {
+          section: "🔥 Sexual Confidence & Masculine Energy",
+          question:
+            "How would your life change if you felt more sensation, more confidence, and more emotional connection in your sexuality?",
+          options: [
+            { text: "It would change everything", value: 3 },
+            { text: "It would heal something deep", value: 2 },
+            { text: "I’m not sure—but I’d like to find out", value: 1 },
+            { text: "I don’t think it would change much", value: 0 },
+          ],
+        },
+        {
+          section: "🔥 Sexual Confidence & Masculine Energy",
+          question:
+            "Do you believe restoring your foreskin could help reclaim your full masculine energy?",
+          options: [
+            { text: "Absolutely", value: 3 },
+            { text: "Possibly", value: 2 },
+            { text: "Not sure", value: 1 },
+            { text: "No", value: 0 },
+          ],
+        },
+        {
+          section: "🔥 Sexual Confidence & Masculine Energy",
+          question:
+            "What would it mean to you to reclaim a part of yourself that was taken without your consent?",
+          options: [
+            { text: "It would change everything", value: 3 },
+            { text: "It would be deeply healing", value: 2 },
+            { text: "I’d need to learn more", value: 1 },
+            { text: "I’m not sure it matters", value: 0 },
+          ],
+        },
+        {
+          section: "🔥 Sexual Confidence & Masculine Energy",
+          question:
+            "How committed would you be to restore your masculinity even if it takes time and effort?",
+          options: [
+            { text: "Absolutely committed, bring it on", value: 3 },
+            { text: "I would try my best to", value: 2 },
+            { text: "Maybe—I still need more clarity", value: 1 },
+            { text: "I’m not willing to put in the work", value: 0 },
+          ],
+        },
+        {
+          section: "❤️ Restoration and Relational Power",
+          question:
+            "Did you know that many men who restore report greater pleasure, confidence, and deeper connection in intimacy?",
+          options: [
+            { text: "Yes, and I want to be one of them", value: 3 },
+            { text: "I’ve heard that, and it inspires me", value: 2 },
+            { text: "I didn’t know, but I’m curious now", value: 1 },
+            { text: "No, but that gives me hope", value: 0 },
+          ],
+        },
+        {
+          section: "❤️ Restoration and Relational Power",
+          question:
+            "What if restoring your body became the key to restoring your entire life—your confidence, finances, relationship, health, self-image, etc.?",
+          options: [
+            {
+              text: "That would be amazing, I want to conquer every area of my life",
+              value: 3,
+            },
+            { text: "I’m starting to believe that could be my case", value: 2 },
+            {
+              text: "I’m open to that idea, but would like to know more",
+              value: 1,
+            },
+            { text: "I’m unsure", value: 0 },
+          ],
+        },
+        {
+          section: "❤️ Restoration and Relational Power",
+          question:
+            "Did you know that a restored foreskin can reduce friction and enhance pleasure—for both you and your partner?",
+          options: [
+            {
+              text: "I want for my partner to experience more pleasure as well",
+              value: 3,
+            },
+            { text: "I’m curious about that now", value: 2 },
+            { text: "I’ve heard that, and it makes sense", value: 1 },
+            { text: "I had no idea", value: 0 },
+          ],
+        },
+        {
+          section: "❤️ Restoration and Relational Power",
+          question:
+            "How would your partner respond if you showed up with more sensitivity, presence, and confidence in intimacy?",
+          options: [
+            { text: "I think it would change our relationship", value: 3 },
+            { text: "She would feel more open and connected", value: 2 },
+            {
+              text: "I don’t currently have a partner, but I want to be that man",
+              value: 1,
+            },
+            { text: "I’m not sure, but I’d like to find out", value: 0 },
+          ],
+        },
+        {
+          section: "❤️ Restoration and Relational Power",
+          question:
+            "Do you believe that when you heal as a man, it directly impacts the depth and safety your woman feels with you?",
+          options: [
+            { text: "Yes—without a doubt", value: 3 },
+            { text: "I’m starting to see that", value: 2 },
+            { text: "I’m unsure, but open to it", value: 1 },
+            { text: "I never considered that before", value: 0 },
+          ],
+        },
+        {
+          section: "❤️ Restoration and Relational Power",
+          question:
+            "Imagine creating a deeper emotional and sexual bond with your partner because you feel whole in your body. How does that sound?",
+          options: [
+            { text: "Like the relationship I’ve always wanted", value: 3 },
+            { text: "Inspiring and worth the work", value: 2 },
+            { text: "I’m open to that possibility", value: 1 },
+            { text: "I’ve never thought of intimacy that way", value: 0 },
+          ],
+        },
+        {
+          section: "❤️ Restoration and Relational Power",
+          question:
+            "Would you take the first step to restore your masculine wholeness—knowing your current or future partner could feel more loved, desired, and safe with you?",
+          options: [
+            { text: "Yes—for both of us", value: 3 },
+            { text: "I would strongly consider it", value: 2 },
+            { text: "Maybe, I still need more clarity", value: 1 },
+            { text: "I’m not sure yet", value: 0 },
+          ],
+        },
+        {
+          section: "❤️ Restoration and Relational Power",
+          question:
+            "If you could begin restoring your sensitivity and protecting your glans starting today knowing that the damage it has suffered can be reversed, to return to its natural, smooth and shiny skin… would you?",
+          options: [
+            { text: "Yes—immediately", value: 3 },
+            { text: "I’m very interested", value: 2 },
+            { text: "I’d like to learn more first", value: 1 },
+            { text: "I’m not sure yet", value: 0 },
+          ],
+        },
+        { section: "RESULTS" },
+      ];
+
+      let currentQuestionIndex = 0;
+      let userAnswers = {};
+
+      function openQuizPopup() {
+        currentQuestionIndex = 0;
+        userAnswers = {};
+        document.getElementById("quizOverlay").style.display = "flex";
+        renderQuestion();
+      }
+
+      function renderQuestion() {
+        const container = document.getElementById("popupQuizContainer");
+        const qData = quizData[currentQuestionIndex];
+
+        if (qData.type === "intro") {
+          container.innerHTML = `
+                <div class="intro-message" style="text-align:left; font-size:1.1rem; line-height:1.7;">
+                    <p>What if a single, silent decision made in your infancy is still affecting your body, your pleasure, and your confidence today?</p>
+                    <p>Most men never think twice about circumcision. But what if it’s been shaping your experience of masculinity all along—without you even realizing it?</p>
+                    <p>This quiz is designed to help you assess your awareness, question what you were told, and face truths that might stir discomfort—or even anger. But that emotion has a purpose.</p>
+                    <p>It’s the spark that can ignite your healing, guide your restoration, and help you reclaim what was taken—not just for yourself, but for the generations that follow.</p>
+                </div>
+                <div style="text-align:center; margin-top:20px;">
+                    <button class="cta-button" onclick="nextQuestion()">Start the Quiz</button>
+                </div>`;
+          return;
+        }
+
+        if (qData.type === "details") {
+          container.innerHTML = `
+                <div class="quiz-header"><h2>THE WHOLE MAN QUIZ</h2><p class="section-subheading" style="font-size:1rem; margin-bottom:20px;">Discover What's Missing from Your Masculine Identity</p></div>
+                <div class="question-section">
+                    <p>Please enter your details below:</p>
+                    <input type="text" class="input-field" placeholder="Your Name" id="nameField" oninput="validateFields()" value="${
+                      userAnswers.name || ""
+                    }" />
+                    <input type="email" class="input-field" placeholder="Your Email" id="emailField" oninput="validateFields()" value="${
+                      userAnswers.email || ""
+                    }" />
+                </div>
+                <div class="nav-btns" style="justify-content:center;">
+                    <button class="nav-btn" id="continueBtn" onclick="submitDetails()" disabled>Continue to test</button>
+                </div>`;
+          validateFields();
+          return;
+        }
+
+        if (qData.section === "RESULTS") {
+          calculateAndShowResult();
+          return;
+        }
+
+        const totalQuestions = quizData.filter((q) => q.options).length;
+        const currentQuestionNumber = currentQuestionIndex - 1;
+        const progress = Math.round(
+          (currentQuestionNumber / totalQuestions) * 100
+        );
+
+        let optionsHTML = qData.options
+          .map(
+            (opt, i) =>
+              `<button class="answer-btn" onclick="selectAnswer(${currentQuestionIndex}, ${i})">${opt.text}</button>`
+          )
+          .join("");
+
+        container.innerHTML = `
+            <div class="quiz-header"><h2>${qData.section}</h2></div>
+            <div style="height:10px; background:#333; border-radius:5px; overflow:hidden; margin: 20px 0;"><div style="width:${progress}%; height:100%; background:var(--color-primary-pink);"></div></div>
+            <div class="question-section"><p>${qData.question}</p></div>
+            <div class="answers">${optionsHTML}</div>
+            <div class="nav-btns">
+                <button class="nav-btn" onclick="prevQuestion()">Previous</button>
+                <button class="nav-btn" onclick="nextQuestion()" id="nextBtn" disabled>Next</button>
+            </div>
+            <div style="text-align:center; margin-top:10px; font-size:0.9em; color:#aaa;">Question ${currentQuestionNumber} of ${totalQuestions}</div>
+        `;
+
+        if (userAnswers[currentQuestionIndex] !== undefined) {
+          selectAnswer(
+            currentQuestionIndex,
+            userAnswers[currentQuestionIndex],
+            true
+          );
+        }
+      }
+
+      function validateFields() {
+        const nameValid =
+          document.getElementById("nameField").value.trim() !== "";
+        const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+          document.getElementById("emailField").value.trim()
+        );
+        const continueBtn = document.getElementById("continueBtn");
+        continueBtn.disabled = !(nameValid && emailValid);
+        if (!continueBtn.disabled) {
+          continueBtn.style.background = "var(--color-accent-fire)";
+        } else {
+          continueBtn.style.background = "#444";
+        }
+      }
+
+      function submitDetails() {
+        userAnswers.name = document.getElementById("nameField").value.trim();
+        userAnswers.email = document.getElementById("emailField").value.trim();
+        nextQuestion();
+      }
+
+      function selectAnswer(questionIdx, optionIdx, isRerender = false) {
+        userAnswers[questionIdx] = optionIdx;
+        document.querySelectorAll(".answers .answer-btn").forEach((btn, i) => {
+          btn.classList.toggle("selected", i === optionIdx);
+        });
+        document.getElementById("nextBtn").disabled = false;
+      }
+
+      function nextQuestion() {
+        if (
+          userAnswers[currentQuestionIndex] === undefined &&
+          currentQuestionIndex > 1
+        ) {
+          return;
+        }
+        currentQuestionIndex++;
+        renderQuestion();
+      }
+
+      function prevQuestion() {
+        currentQuestionIndex--;
+        renderQuestion();
+      }
+
+      function calculateAndShowResult() {
+        let score = 0;
+        for (const key in userAnswers) {
+          if (!isNaN(key) && key > 1) {
+            const questionIndex = parseInt(key);
+            const answerIndex = userAnswers[key];
+            score += quizData[questionIndex].options[answerIndex].value;
+          }
+        }
+
+        let resultCategoryTitle, visualTitle, message;
+        const totalQuestions = quizData.filter((q) => q.options).length;
+        const maxScore = totalQuestions * 3;
+
+        if (score <= 43) {
+          resultCategoryTitle = "🛡️ The Resting Warrior";
+          visualTitle = "You’ve Been Still Long Enough.";
+          message = `You’ve carried your armor for so long, it became part of you. But the fire never died. You were not meant to sleep through life—you were meant to rise.`;
+        } else if (score <= 86) {
+          resultCategoryTitle = "🧭 The Wandering Hero";
+          visualTitle = "You’re Not Lost—You’re Being Called.";
+          message = `You’ve started to feel the call. You’re no longer asleep—you’re in motion. You are ready to shift from wandering to walking a path with direction.`;
+        } else {
+          resultCategoryTitle = "🔥 The Rising Alchemist";
+          visualTitle = "The Fire Has Chosen You.";
+          message = `You have entered the fire willingly. You are transmuting pain into purpose, and doubt into power. True transformation doesn’t come from bypassing the wound—but from healing it at the source.`;
+        }
+
+        const container = document.getElementById("popupQuizContainer");
+        container.innerHTML = `
+            <div class="outro">
+                <h2>Your Result:</h2>
+                <div class="result">
+                    <h3 class="result-category-title">${resultCategoryTitle}</h3>
+                    <div class="result-visual-title">${visualTitle}</div>
+                    <p class="result-message">${message}</p>
+                </div>
+                <div class="cta">
+                    <button class="cta-button" onclick="window.location.href='https://app.ndefi.io/v2/preview/oLOHeBLJ3ikBTIWzvI7k'">Continue Your Journey</button>
+                </div>
+            </div>
+        `;
+      }
+
+      function closeQuiz() {
+        document.getElementById("quizOverlay").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

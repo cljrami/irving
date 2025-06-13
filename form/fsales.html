@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Whole Man | Reclaim Your Wholeness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&family=Playfair+Display:ital,wght@1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --color-bg-dark: #0a0a0a;
+        --color-bg-medium: #121212;
+        --color-text: #eaeaea;
+        --color-text-muted: #a0a0a0;
+        --color-primary: #e6007e;
+        --color-accent-gold: #d4af37;
+        --color-border: rgba(255, 255, 255, 0.1);
+        --font-main: "Poppins", sans-serif;
+        --font-quote: "Playfair Display", serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--font-main);
+        background-color: var(--color-bg-dark);
+        color: var(--color-text);
+        line-height: 1.8;
+        overflow-x: hidden;
+      }
+      .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: auto;
+        padding: 120px 20px;
+        text-align: center;
+      }
+      .page-section {
+        position: relative;
+        border-bottom: 1px solid var(--color-border);
+      }
+      .section-heading {
+        font-family: var(--font-main);
+        font-weight: 900;
+        font-size: 3.8rem;
+        letter-spacing: 1px;
+        color: white;
+        margin-bottom: 25px;
+        line-height: 1.2;
+      }
+      .section-subheading {
+        font-size: 1.2rem;
+        max-width: 750px;
+        margin: 0 auto 40px;
+        color: var(--color-text-muted);
+      }
+      .cta-button {
+        display: inline-block;
+        padding: 20px 50px;
+        background: var(--color-primary);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1.3em;
+        font-family: var(--font-main);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        box-shadow: 0 8px 25px rgba(230, 0, 126, 0.3);
+        cursor: pointer;
+      }
+      .cta-button:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 12px 35px rgba(230, 0, 126, 0.5);
+      }
+      .hero-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.9)
+          ),
+          url("https://images.unsplash.com/photo-1542382257-80ded1498744?q=80&w=1974&auto=format&fit=crop");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .hero-section .section-heading {
+        font-size: 5rem;
+        animation: text-reveal 1s ease-out;
+      }
+      .hero-section .section-subheading {
+        opacity: 0;
+        animation: fadeInUp 1s ease-out 0.5s forwards;
+      }
+      .hero-section .quote {
+        font-family: var(--font-quote);
+        font-style: italic;
+        font-size: 1.5rem;
+        color: var(--color-accent-gold);
+        margin: 10px 0;
+        opacity: 0;
+        animation: fadeInUp 1s ease-out forwards;
+      }
+      .video-section .video-container {
+        position: relative;
+        max-width: 900px;
+        margin: auto;
+        aspect-ratio: 16/9;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: #000;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        border: 2px solid var(--color-border);
+      }
+      .video-section .video-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+      .feature-item {
+        background: var(--color-bg-medium);
+        padding: 40px;
+        border-radius: 12px;
+        border: 1px solid var(--color-border);
+      }
+      .feature-item .icon {
+        font-size: 3rem;
+        color: var(--color-accent-gold);
+        margin-bottom: 15px;
+      }
+      .feature-item h3 {
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: white;
+      }
+      .pricing-section .pricing-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 40px;
+        margin-top: 50px;
+        align-items: stretch;
+      }
+      .pricing-card {
+        background: var(--color-bg-medium);
+        padding: 40px;
+        border-radius: 15px;
+        border: 1px solid var(--color-border);
+        transition: all 0.3s ease;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+      }
+      .pricing-card-content {
+        flex-grow: 1;
+      }
+      .pricing-card.highlight {
+        border: 2px solid var(--color-primary);
+        box-shadow: 0 0 60px rgba(230, 0, 126, 0.3);
+        transform: scale(1.05);
+      }
+      .pricing-card h3 {
+        font-weight: 900;
+        font-size: 1.8rem;
+        color: var(--color-accent-gold);
+        margin-bottom: 20px;
+      }
+      .pricing-card.highlight h3 {
+        color: var(--color-primary);
+      }
+      .pricing-card .price {
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: white;
+        margin: 15px 0;
+      }
+      .pricing-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 25px 0;
+      }
+      .pricing-card li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+      .pricing-card li .check {
+        color: var(--color-accent-gold);
+        font-weight: bold;
+      }
+      .pricing-card li .cross {
+        color: #555;
+      }
+      .comparison-table {
+        width: 100%;
+        margin-top: 50px;
+        border-collapse: collapse;
+        background-color: var(--color-bg-medium);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .comparison-table th,
+      .comparison-table td {
+        padding: 20px;
+        border-bottom: 1px solid var(--color-border);
+        text-align: left;
+      }
+      .comparison-table th {
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+      .comparison-table td:nth-child(2),
+      .comparison-table td:nth-child(3) {
+        text-align: center;
+      }
+      .comparison-table .check {
+        color: var(--color-accent-gold);
+        font-size: 1.5rem;
+      }
+      .comparison-table .cross {
+        color: #444;
+        font-size: 1.5rem;
+      }
+      .faq-section .faq-item {
+        max-width: 700px;
+        margin: 20px auto;
+        text-align: left;
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 20px;
+      }
+      .faq-section .faq-question {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-section .faq-question::after {
+        content: "+";
+        font-size: 2rem;
+        color: var(--color-primary);
+        transition: transform 0.3s ease;
+      }
+      .faq-section .faq-item.active .faq-question::after {
+        transform: rotate(45deg);
+      }
+      .faq-section .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+      }
+      .entry-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 10001;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        backdrop-filter: blur(8px);
+      }
+      .modal-content {
+        background: var(--color-bg-medium);
+        padding: 50px;
+        border-radius: 10px;
+        border: 1px solid var(--color-border);
+        max-width: 500px;
+        width: 90%;
+        animation: fadeIn 0.5s ease-out;
+      }
+      .modal-content h2 {
+        font-family: var(--font-main);
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
+      .modal-content p {
+        color: var(--color-text-muted);
+        margin: 20px 0;
+      }
+      .modal-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+      }
+      .fade-in-up-scroll {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .fade-in-up-scroll.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @keyframes text-reveal {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (max-width: 768px) {
+        .section-heading {
+          font-size: 2.8rem;
+        }
+        .hero-section .section-heading {
+          font-size: 3rem;
+        }
+        .pricing-grid {
+          grid-template-columns: 1fr;
+        }
+        .pricing-card.highlight {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="entryModal" class="entry-modal">
+      <div class="modal-content">
+        <h2>🔞 Are You 18 or Older?</h2>
+        <p>
+          This site contains content intended for adult men (18+). It includes
+          discussion of sexual trauma, male anatomy, and physical restoration.
+          Please confirm your age before entering.
+        </p>
+        <div class="modal-buttons">
+          <button class="cta-button" id="enterSiteBtn">
+            I Am 18 or Older → Enter Site
+          </button>
+          <button
+            class="cta-button"
+            id="exitSiteBtn"
+            style="
+              background: var(--color-bg-dark);
+              border: 1px solid var(--color-text-muted);
+            "
+          >
+            Exit Site
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="siteContent" style="visibility: hidden">
+      <header class="page-section hero-section">
+        <div class="container">
+          <h1 class="section-heading">You are not broken. You were robbed.</h1>
+          <p class="section-subheading">
+            And now you finally know the truth. Over 20,000 nerve endings. A
+            lifetime of numbness. They told you it was just skin. It wasn’t.
+            Now, for the first time, you have a choice. Start your journey back
+            to wholeness.
+          </p>
+          <div class="quote-container">
+            <p class="quote" style="animation-delay: 1.2s">
+              “The warrior is ready. Now it's time to act.”
+            </p>
+            <p class="quote" style="animation-delay: 1.4s">
+              “You’ve wandered enough. Now follow the map.”
+            </p>
+            <p class="quote" style="animation-delay: 1.6s">
+              “The King reclaims his crown.”
+            </p>
+            <p class="quote" style="animation-delay: 1.8s">
+              “The Alchemist continues the transmutation.”
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-section video-section">
+          <div class="container fade-in-up-scroll">
+            <h2 class="section-heading">"The Truth They Never Told You"</h2>
+            <p class="section-subheading">
+              (Symbolic art, narrative voice, transition from archetype)
+            </p>
+            <div class="video-container">
+              <iframe
+                src="https://www.youtube.com/embed/e_84g0sS_c4"
+                title="Symbolic Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="page-section"
+          style="background-color: var(--color-bg-medium)"
+        >
+          <div class="container fade-in-up-scroll">
+            <h2 class="section-heading">🧬 What Is the Device?</h2>
+            <p class="section-subheading">
+              This is not just a product. It’s a physical key to reclaim what
+              was taken. The Whole Man Restoration Device uses gentle, sustained
+              tension to gradually regenerate the missing skin of the
+              foreskin—without surgery, without pain, and without drugs. Your
+              body is intelligent. With the right conditions, it knows how to
+              restore itself. This tool has been designed by men who’ve walked
+              this path before you. It’s small, discreet, and can be worn under
+              clothes throughout the day. Each part has been engineered to
+              support your daily restoration without discomfort.
+            </p>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="container fade-in-up-scroll">
+            <h2 class="section-heading">⚙️ How It Works</h2>
+            <div class="features-grid">
+              <div class="feature-item">
+                <div class="icon">🌀</div>
+                <h3>Progressive Tension Therapy</h3>
+                <p>
+                  The device gradually encourages the skin to stretch and
+                  regenerate new tissue over time.
+                </p>
+              </div>
+              <div class="feature-item">
+                <div class="icon">💠</div>
+                <h3>No Surgery. No Drugs.</h3>
+                <p>
+                  It’s a natural process that leverages your skin’s ability to
+                  adapt and rebuild.
+                </p>
+              </div>
+              <div class="feature-item">
+                <div class="icon">📈</div>
+                <h3>Results Take Time—but They’re Permanent</h3>
+                <p>
+                  This is a commitment. Like any meaningful transformation, it
+                  won’t happen overnight. But you will feel it. In your body. In
+                  your pleasure. In your presence.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="page-section"
+          style="background-color: var(--color-bg-medium)"
+        >
+          <div class="container fade-in-up-scroll">
+            <h2 class="section-heading">🔍 What Can You Expect?</h2>
+            <div
+              class="features-grid"
+              style="
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              "
+            >
+              <div class="feature-item"><h3>Increased sensitivity</h3></div>
+              <div class="feature-item"><h3>Restored glans protection</h3></div>
+              <div class="feature-item"><h3>Emotional closure</h3></div>
+              <div class="feature-item"><h3>Deep bodily connection</h3></div>
+              <div class="feature-item">
+                <h3>Confidence and clarity in your masculinity</h3>
+              </div>
+            </div>
+            <p
+              class="quote"
+              style="animation: none; opacity: 1; margin-top: 50px"
+            >
+              “This isn’t about going back. It’s about becoming whole for the
+              first time.”
+            </p>
+          </div>
+        </section>
+
+        <section class="page-section pricing-section">
+          <div class="container fade-in-up-scroll">
+            <h2 class="section-heading">🛤️ Choose Your Path</h2>
+            <div class="pricing-grid">
+              <div class="pricing-card">
+                <div class="pricing-card-content">
+                  <h3>✧ The Lone Wolf</h3>
+                  <p class="price">
+                    $230
+                    <span
+                      style="font-size: 1rem; color: var(--color-text-muted)"
+                      >USD</span
+                    >
+                  </p>
+                  <p>One-Time Payment</p>
+                  <ul>
+                    <li><span class="check">✅</span> Restoration Device</li>
+                    <li>
+                      <span class="check">✅</span> Premium Regenerative
+                      Essential Oil Blend
+                    </li>
+                    <li>
+                      <span class="cross">❌</span> No community. No guidance.
+                      No support.
+                    </li>
+                    <li>
+                      <span class="cross">❌</span> No discounts on future oil
+                      refills.
+                    </li>
+                  </ul>
+                  <p style="font-size: 0.9rem; color: var(--color-text-muted)">
+                    🧪 Refill bottles available for $111 USD.
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="cta-button"
+                  style="
+                    background: var(--color-bg-dark);
+                    border: 1px solid var(--color-text-muted);
+                    margin-top: 30px;
+                  "
+                  >“I’ll walk alone – I’ll take the device only”</a
+                >
+              </div>
+              <div class="pricing-card highlight">
+                <div class="pricing-card-content">
+                  <h3>🔴 The Whole Man Experience</h3>
+                  <p class="price">
+                    $171
+                    <span
+                      style="font-size: 1rem; color: var(--color-text-muted)"
+                      >Today</span
+                    >
+                  </p>
+                  <p>+ $50/month</p>
+                  <ul>
+                    <li>
+                      <span class="check">✅</span> Everything from Lone Wolf,
+                      plus:
+                    </li>
+                    <li>
+                      <span class="check">📚</span> The Whole Man Online Program
+                      (Value: $249)
+                    </li>
+                    <li>
+                      <span class="check">💪</span> Live Fitness Coaching
+                      (3x/week) (Value: $120/mo)
+                    </li>
+                    <li>
+                      <span class="check">👥</span> Live Men’s Circles + Private
+                      Forum (Value: $150/mo)
+                    </li>
+                    <li>
+                      <span class="check">🎁</span> Monthly Premium Product Box
+                    </li>
+                    <li>
+                      <span class="check">🔁</span> 25% Discount on Oil Refills
+                    </li>
+                    <li>
+                      <span class="check">🎫</span> VIP Access to Retreats &
+                      Festivals
+                    </li>
+                    <li>Cancel anytime. Keep everything. No risk.</li>
+                  </ul>
+                </div>
+                <a href="#" class="cta-button" style="margin-top: 30px"
+                  >“I Want the Full Experience →”</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="page-section"
+          style="background-color: var(--color-bg-medium)"
+        >
+          <div class="container fade-in-up-scroll">
+            <h2 class="section-heading">🧭 Compare Your Path</h2>
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Lone Wolf</th>
+                  <th>Whole Man Experience</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Restoration Device</td>
+                  <td class="check">✅</td>
+                  <td class="check">✅</td>
+                </tr>
+                <tr>
+                  <td>Premium Oil Blend</td>
+                  <td class="check">✅</td>
+                  <td class="check">✅</td>
+                </tr>
+                <tr>
+                  <td>Guidance & Structure</td>
+                  <td class="cross">❌</td>
+                  <td class="check">✅</td>
+                </tr>
+                <tr>
+                  <td>4-Pillar Online Program</td>
+                  <td class="cross">❌</td>
+                  <td class="check">✅</td>
+                </tr>
+                <tr>
+                  <td>Live Coaching</td>
+                  <td class="cross">❌</td>
+                  <td>✅ (3x/week)</td>
+                </tr>
+                <tr>
+                  <td>Brotherhood & Forum</td>
+                  <td class="cross">❌</td>
+                  <td class="check">✅</td>
+                </tr>
+                <tr>
+                  <td>Monthly Product Box</td>
+                  <td class="cross">❌</td>
+                  <td>✅ ($50 value/month)</td>
+                </tr>
+                <tr>
+                  <td>Oil Refill Price</td>
+                  <td>$111 USD</td>
+                  <td>$21 USD (with credit)</td>
+                </tr>
+                <tr>
+                  <td>Mentorship</td>
+                  <td class="cross">❌</td>
+                  <td class="check">✅</td>
+                </tr>
+                <tr>
+                  <td>Cancel Anytime</td>
+                  <td>–</td>
+                  <td class="check">✅</td>
+                </tr>
+                <tr>
+                  <td>Price</td>
+                  <td><strong>$230 One-Time</strong></td>
+                  <td><strong>$171 Today + $50/mo</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="container fade-in-up-scroll">
+            <h2 class="section-heading">💬 Let’s Be Honest…</h2>
+            <div
+              style="
+                max-width: 800px;
+                margin: auto;
+                text-align: left;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+              "
+            >
+              <div>
+                <h4>You're probably already spending $50/month on:</h4>
+                <ul>
+                  <li>A gym you don’t go to</li>
+                  <li>Supplements with no guidance</li>
+                  <li>Booze, weed, porn, or mindless habits</li>
+                </ul>
+              </div>
+              <div>
+                <h4>What if that same $50 gave you:</h4>
+                <ul>
+                  <li>$50 worth of clean supplements, oils, and tools</li>
+                  <li>A stronger, more confident body</li>
+                  <li>Better sex and deeper presence</li>
+                  <li>A tribe of men walking the same path</li>
+                  <li>Real training to rise in power</li>
+                </ul>
+              </div>
+            </div>
+            <p
+              class="section-subheading"
+              style="margin-top: 40px; font-weight: bold"
+            >
+              This isn’t a subscription. It’s a return to yourself.
+            </p>
+          </div>
+        </section>
+
+        <section class="page-section testimonial-section">
+          <div class="container fade-in-up-scroll">
+            <h2 class="section-heading">🌟 Transformation Testimonial</h2>
+            <div class="testimonial-card">
+              <p>
+                “For years I felt something was wrong with me. Nothing explained
+                it until I discovered the truth about what was taken. Restoring
+                my body was just the beginning. I regained my energy, my
+                pleasure, and my presence as a man. This path is not fast—but
+                it’s real. And it’s worth every step.”
+              </p>
+              <footer>— Irving, Creator of The Whole Man</footer>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section faq-section">
+          <div class="container fade-in-up-scroll">
+            <h2 class="section-heading">❓ Frequently Asked Questions</h2>
+            <div class="faq-item">
+              <h3 class="faq-question">
+                How long does it take to see results?
+              </h3>
+              <div class="faq-answer">
+                <p>
+                  With consistency, you can see progress in weeks and
+                  significant restoration in months.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3 class="faq-question">Does it hurt?</h3>
+              <div class="faq-answer">
+                <p>
+                  No. The device is designed to be safe, adaptable, and
+                  comfortable for daily wear.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3 class="faq-question">What if I have a partner?</h3>
+              <div class="faq-answer">
+                <p>
+                  Many men report deeper connection, increased sensitivity, and
+                  enhanced sexual experience for both themselves and their
+                  partners.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <h3 class="faq-question">Can I cancel the membership?</h3>
+              <div class="faq-answer">
+                <p>
+                  Yes, anytime. You keep all the digital content and products
+                  you've received.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="page-section final-cta-section"
+          style="border-bottom: none; background-color: var(--color-bg-medium)"
+        >
+          <div class="container fade-in-up-scroll">
+            <h2 class="section-heading">⏳ Start Now</h2>
+            <div
+              class="pricing-grid"
+              style="grid-template-columns: 1fr; max-width: 700px; margin: auto"
+            >
+              <a
+                href="#"
+                class="cta-button"
+                style="
+                  background: var(--color-bg-dark);
+                  border: 1px solid var(--color-text-muted);
+                "
+                >🔘 “I’ll walk alone – I’ll take the device only”</a
+              >
+              <a href="#" class="cta-button"
+                >🔴 “I Want the Full Experience →”</a
+              >
+            </div>
+            <p class="cta-subtext" style="margin-top: 20px">
+              🔎 You must be 18+ to continue.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container" style="padding: 40px 20px">
+          <p>
+            <strong>✅ Transformation Guarantee:</strong> If after 30 days you
+            don’t feel your transformation has begun, we’ll refund your money.
+            No questions asked.
+          </p>
+          <p
+            style="
+              font-size: 0.9rem;
+              color: var(--color-text-muted);
+              margin-top: 30px;
+            "
+          >
+            &copy; 2024 The Whole Man. All Rights Reserved. |
+            <a href="#" style="color: var(--color-text-muted)"
+              >Privacy Policy</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const entryModal = document.getElementById("entryModal");
+        const siteContent = document.getElementById("siteContent");
+        if (entryModal) {
+          document
+            .getElementById("enterSiteBtn")
+            .addEventListener("click", () => {
+              entryModal.style.display = "none";
+              siteContent.style.visibility = "visible";
+            });
+          document
+            .getElementById("exitSiteBtn")
+            .addEventListener("click", () => {
+              window.location.href = "https://www.google.com";
+            });
+        }
+
+        const faqQuestions = document.querySelectorAll(".faq-question");
+        faqQuestions.forEach((question) => {
+          question.addEventListener("click", (event) => {
+            const item = event.currentTarget.parentElement;
+            if (item.classList.contains("active")) {
+              item.classList.remove("active");
+              item.querySelector(".faq-answer").style.maxHeight = null;
+            } else {
+              faqQuestions.forEach((q) => {
+                q.parentElement.classList.remove("active");
+                q.nextElementSibling.style.maxHeight = null;
+              });
+              item.classList.add("active");
+              item.querySelector(".faq-answer").style.maxHeight =
+                item.querySelector(".faq-answer").scrollHeight + "px";
+            }
+          });
+        });
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+        );
+
+        document.querySelectorAll(".fade-in-up-scroll").forEach((el) => {
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
+</html>
